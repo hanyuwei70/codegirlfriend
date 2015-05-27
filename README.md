@@ -1,16 +1,7 @@
-﻿# codegirlfriend
+# codegirlfriend
 
-##basic introducation
-A novel about L and his codegirlfriend
+hanyuwei70用来写乱七八糟东西的库kira~
+鉴于里面有一些作业之类的东西，请注意每个文件开头的版权注释
 
-> 我觉得我不能再黑L了
-
-> 再黑L我就要遭天罚了。。
-
-##about copyright
-I am not sure about it... So you should regard it as private now.
-
-Any contribution is welcome. But please note what license you use for any content you have committed, otherwise I will regrad it as wtfpl.
-
-##contact author
+##联系作者
 E-mail:hanyuwei70(at)qq.com
