@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>抽奖</title>
+<script language="javascript">
+var timer;
+function getRnd(max)
+{
+	var a = parseInt(Math.random()*(max+1))
+	return a
+}
+function update()
+{
+	var num=getRnd(60);
+	document.getElementById("name").value=num;
+}
+function start()
+{
+	clearInterval(timer)
+	timer=setInterval("update()",50)
+	document.getElementById("start_cmd").disabled=true
+	document.getElementById("end_cmd").disabled=false
+}
+function end()
+{
+	document.getElementById("start_cmd").disabled=false
+	document.getElementById("end_cmd").disabled=true
+	clearInterval(timer)
+}
+</script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<head>
+<body>
+<div id="container">
+<h1>树莓幸运大抽奖！</h1>
+<h2>中奖者<input type="text" id="name" readonly/></h2>
+<input type="button" id="start_cmd" onclick="start()" value="开始"/>
+<input type="button" id="end_cmd" onclick="end()" value="停！" disabled/>
+</div>
+</body>
+</html>

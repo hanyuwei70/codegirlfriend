@@ -1,0 +1,15 @@
+@charset "utf-8";
+#container{
+	text-align: center;
+}
+h2{
+	font-family: "幼圆";
+	font-size: 2em;
+}
+#name{
+	font-family: "微软雅黑";
+	padding: -20px;
+	font-size: 2em;
+	border: none;
+	text-align: center;
+}
