@@ -57,6 +57,6 @@ int main()
 	root=init();
 	LCR(root); printf("\n");
 	LRC(root); printf("\n");
-	printf("leaf node(s):%d\n", countleaf(root))
+	printf("leaf node(s):%d\n", countleaf(root));
 	return 0;
 }
