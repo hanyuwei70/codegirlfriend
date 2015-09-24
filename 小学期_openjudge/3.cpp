@@ -48,6 +48,7 @@ int main()
 			for (int i=1;i<m;++i)
 				a[i][j]=a[i][j+1];
 		--m;
+		#ifdef DEBUG
 		cout << "====DEBUG MATRIX====" << endl;
 		for (int i=1;i<=m;++i)
 		{
@@ -56,6 +57,7 @@ int main()
 			cout << endl;
 		}
 		cout << "====END OF DEBUG====" << endl;
+		#endif
 		if (m==1)
 		{
 			cout << sum << endl;
