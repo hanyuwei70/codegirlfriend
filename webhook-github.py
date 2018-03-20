@@ -34,7 +34,6 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.send_error(400, 'json decode error')
             return
         print("Event: %s" % event)
-        print(data)
         try:
             if data['repository']['full_name'] != REPO_FULLNAME:
                 raise Exception("full_name not match")
@@ -42,7 +41,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             if ret != 0:
                 raise Exception("git pull error")
         except KeyError:
-            print("WTF")
+            self.send_error(400, "KeyError happened!")
         except Exception as e:
             error, = e.args
             self.send_error(400, "error: %s" % error)
