@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>开始抽奖</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<script language="javascript">
+<!--
+// global variables
+var timer;
+var flag = new Array(100);
+var existingnum = new Array(100);
+var clickTimes = 0;
+var randnum;
+var cellnum =1;
+var mobile = new Array();
+// set data here!!
+mobile[0]='1';
+mobile[1]='2';
+mobile[2]='3';
+mobile[3]='4';
+mobile[4]='5';
+mobile[5]='6';
+mobile[6]='7';
+mobile[7]='8';
+mobile[8]='9';
+mobile[9]='10';
+mobile[10]='11';
+mobile[11]='12';
+mobile[12]='13';
+mobile[13]='14';
+mobile[14]='15';
+mobile[15]='16';
+mobile[16]='17';
+mobile[17]='18';
+mobile[18]='19';
+mobile[19]='20';
+mobile[20]='21';
+mobile[21]='22';
+mobile[22]='23';
+mobile[23]='24';
+mobile[24]='25';
+mobile[25]='26';
+//获取 数组长度
+var num = mobile.length-1;
+
+function getRandNum(){
+num=parseInt(num);
+var y=GetRnd(0,num);
+document.getElementById("result").value = mobile[y];
+}
+
+function start(){
+clearInterval(timer);
+timer = setInterval('change()',20);
+}
+function ok(){
+clearInterval(timer);
+}
+function GetRnd(m,n){
+randnum =parseInt(Math.random()*(n-m+1));
+return randnum;
+}
+//开始
+function setTimer(){
+time=setInterval("getRandNum()",20);
+document.getElementById("start").disabled = true;
+document.getElementById("end").disabled = false;
+}
+//停止
+function clearTimer(){
+
+clearInterval(time);
+while(document.getElementById("result").value == "宋崇庆")
+{
+getRandNum();
+}
+noDupNum();
+document.getElementById("start").disabled = false;
+document.getElementById("end").disabled = true;
+setValues();
+}
+function noDupNum(){
+mobile.removeEleAt(randnum);
+var temp= 0;
+for(p=0; p<mobile.length;p++){
+if(typeof mobile[p]!="undefined"){
+mobile[temp] = mobile[p];
+temp++;
+}
+}
+num = mobile.length-1;
+}
+
+Array.prototype.removeEleAt = function(dx)
+{
+if(isNaN(dx)||dx>this.length){return false;}
+this.splice(dx,1);
+}
+
+function setValues(){
+document.getElementById(cellnum).value =
+document.getElementById("result").value;
+cellnum++;
+}
+//-->
+</script>
+</head>
+<body>
+<center>
+<div> </div>
+<div id="main">
+<div>
+<h1>中奖人</h1>
+
+<p>
+<input id="result" type="text" size="30"
+style="height:130px;width:800px;border:2px solid
+#3CB371 ;font-size:120px;text-align:center;" readonly/></p>
+<p>
+
+<input id="start" type="button" value="开始"
+style="border: 1px solid; border-color: #aaa 000
+#000 #aaa;width:4em; background: #fc0; width:100px;height:30px;"
+onclick="setTimer()" />
+
+<input id="end" type="button" value="停"
+style="border: 1px solid; border-color: #aaa 000
+#000 #aaa;width:4em; background:
+#fc0;width:100px;height:30px;"onclick="clearTimer()" disabled/>
+
+</p>
+
+<p>获奖者（10名）</p>
+<table width="961" height="102" >
+<tr>
+<td><input name="text1" type="text" id="1"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="28" readonly/></td>
+<td><input name="text2" type="text" id="2"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text3" type="text" id="3"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text4" type="text" id="4"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text5" type="text" id="5"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+</tr>
+<tr>
+<td><input name="text6" type="text" id="6"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="28" readonly/></td>
+<td><input name="text7" type="text" id="7"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text8" type="text" id="8"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text9" type="text" id="9"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+<td><input name="text10" type="text" id="10"
+style="height:30px;width:190px;border:1px solid
+#3CB371 ;font-size:25;" size="20" readonly/></td>
+</tr>
+</table>
+</div>
+</div>
+<center>
+</body>
+</html>
