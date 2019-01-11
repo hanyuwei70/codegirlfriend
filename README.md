@@ -1,7 +1,7 @@
 ﻿# codegirlfriend
 
 ##basic introducation
-A novel about L and his codegirlfriend
+A novel about L and her codegirlfriend
 
 > 我觉得我不能再黑L了
 
